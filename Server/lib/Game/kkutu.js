@@ -1443,10 +1443,10 @@ function getRewards(mode, score, bonus, rank, all, ss){
 	// rank는 0~7
 	switch(Const.GAME_TYPE[mode]){
 		case "EKT":
-			rw.score += score * 1.4;
+			rw.score += score * 0;
 			break;
 		case "ESH":
-			rw.score += score * 0.5;
+			rw.score += score * 0;
 			break;
 		case "KKT":
 			rw.score += score * 1.42;
@@ -1455,7 +1455,7 @@ function getRewards(mode, score, bonus, rank, all, ss){
 			rw.score += score * 0.55;
 			break;
 		case "CSQ":
-			rw.score += score * 0.4;
+			rw.score += score * 0;
 			break;
 		case 'KCW':
 			rw.score += score * 1.0;
@@ -1464,7 +1464,7 @@ function getRewards(mode, score, bonus, rank, all, ss){
 			rw.score += score * 0.3;
 			break;
 		case 'ETY':
-			rw.score += score * 0.37;
+			rw.score += score * 0;
 			break;
 		case 'KAP':
 			rw.score += score * 0.8;
@@ -1476,20 +1476,22 @@ function getRewards(mode, score, bonus, rank, all, ss){
 			rw.score += score * 0.57;
 			break;
 		case 'EDA':
-			rw.score += score * 0.65;
+			rw.score += score * 0;
 			break;
 		case 'KSS':
 			rw.score += score * 0.5;
 			break;
 		case 'ESS':
-			rw.score += score * 0.22;
+			rw.score += score * 0;
 			break;
 		case 'KDG':
 			rw.score += score * 0.57;
 			break;
 		case 'EDG':
-			rw.score += score * 0.57;
+			rw.score += score * 0;
 			break;
+		case 'KMH':
+			rw.score += score * 0.95;
 		default:
 			break;
 	}

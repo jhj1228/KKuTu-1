@@ -1,2 +1,173 @@
 This is an error log file of the game server.
 You may use like `tail -f KKUTU_ERROR.log` to watch this.
+:8496 [2021-12-13 18:21:43] ERROR: TypeError: Cannot read property 'charCodeAt' of undefined
+TypeError: Cannot read property 'charCodeAt' of undefined
+    at exports.Room.getSubChar (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:541:15)
+    at onDB (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:231:31)
+    at callback (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:316:13)
+    at Result.preCB (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:298:6)
+    at Result.Query.handleReadyForQuery (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\query.js:144:10)
+    at Connection.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\client.js:180:19)
+    at Connection.emit (events.js:210:5)
+    at Socket.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\connection.js:133:12)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:308:12):8496 [2021-12-13 18:23:40] ERROR: TypeError: Cannot read property 'charCodeAt' of undefined
+TypeError: Cannot read property 'charCodeAt' of undefined
+    at exports.Room.getSubChar (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:541:15)
+    at onDB (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:231:31)
+    at callback (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:316:13)
+    at Result.preCB (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:298:6)
+    at Result.Query.handleReadyForQuery (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\query.js:144:10)
+    at Connection.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\client.js:180:19)
+    at Connection.emit (events.js:210:5)
+    at Socket.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\connection.js:133:12)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:308:12):8496 [2021-12-13 18:27:11] ERROR: TypeError: Cannot read property 'charCodeAt' of undefined
+TypeError: Cannot read property 'charCodeAt' of undefined
+    at exports.Room.getSubChar (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:543:15)
+    at onDB (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:231:31)
+    at callback (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:316:13)
+    at Result.preCB (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:298:6)
+    at Result.Query.handleReadyForQuery (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\query.js:144:10)
+    at Connection.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\client.js:180:19)
+    at Connection.emit (events.js:210:5)
+    at Socket.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\connection.js:133:12)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:308:12):8496 [2021-12-13 18:27:49] ERROR: TypeError: Cannot read property 'charCodeAt' of undefined
+TypeError: Cannot read property 'charCodeAt' of undefined
+    at exports.Room.getSubChar (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:543:15)
+    at onDB (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:231:31)
+    at callback (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:316:13)
+    at Result.preCB (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:298:6)
+    at Result.Query.handleReadyForQuery (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\query.js:144:10)
+    at Connection.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\client.js:180:19)
+    at Connection.emit (events.js:210:5)
+    at Socket.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\connection.js:133:12)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:308:12):8496 [2021-12-13 18:37:41] ERROR: ReferenceError: eql is not defined
+ReferenceError: eql is not defined
+    at exports.Room.getChar (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:543:117)
+    at onDB (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:230:25)
+    at callback (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:316:13)
+    at Result.preCB (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:298:6)
+    at Result.Query.handleReadyForQuery (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\query.js:144:10)
+    at Connection.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\client.js:180:19)
+    at Connection.emit (events.js:210:5)
+    at Socket.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\connection.js:133:12)
+    at Socket.emit (events.js:210:5)
+    at addChunk (_stream_readable.js:308:12):8496 [2021-12-13 18:38:05] ERROR: Error: Cannot find module '../../sub/outer'
+Require stack:
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\master.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\slave.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\cluster.js
+Error: Cannot find module '../../sub/outer'
+Require stack:
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\master.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\slave.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\cluster.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:794:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:687:27)
+    at Module.require (internal/modules/cjs/loader.js:849:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:20:14)
+    at Module._compile (internal/modules/cjs/loader.js:956:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)
+    at Module.load (internal/modules/cjs/loader.js:812:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:724:14)
+    at Module.require (internal/modules/cjs/loader.js:849:19):8496 [2021-12-13 18:38:16] ERROR: Error: Cannot find module '../../sub/outer'
+Require stack:
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\master.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\slave.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\cluster.js
+Error: Cannot find module '../../sub/outer'
+Require stack:
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\master.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\slave.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\cluster.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:794:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:687:27)
+    at Module.require (internal/modules/cjs/loader.js:849:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:20:14)
+    at Module._compile (internal/modules/cjs/loader.js:956:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)
+    at Module.load (internal/modules/cjs/loader.js:812:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:724:14)
+    at Module.require (internal/modules/cjs/loader.js:849:19):8496 [2021-12-13 18:38:26] ERROR: Error: Cannot find module '../../sub/outer'
+Require stack:
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\master.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\slave.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\cluster.js
+Error: Cannot find module '../../sub/outer'
+Require stack:
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\master.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\slave.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\cluster.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:794:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:687:27)
+    at Module.require (internal/modules/cjs/loader.js:849:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:20:14)
+    at Module._compile (internal/modules/cjs/loader.js:956:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)
+    at Module.load (internal/modules/cjs/loader.js:812:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:724:14)
+    at Module.require (internal/modules/cjs/loader.js:849:19):8496 [2021-12-13 18:38:37] ERROR: Error: Cannot find module '../../sub/outer'
+Require stack:
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\master.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\slave.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\cluster.js
+Error: Cannot find module '../../sub/outer'
+Require stack:
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\master.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\slave.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\cluster.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:794:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:687:27)
+    at Module.require (internal/modules/cjs/loader.js:849:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:20:14)
+    at Module._compile (internal/modules/cjs/loader.js:956:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)
+    at Module.load (internal/modules/cjs/loader.js:812:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:724:14)
+    at Module.require (internal/modules/cjs/loader.js:849:19):8496 [2021-12-13 18:38:47] ERROR: Error: Cannot find module '../../sub/outer'
+Require stack:
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\master.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\slave.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\cluster.js
+Error: Cannot find module '../../sub/outer'
+Require stack:
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\master.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\slave.js
+- C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\cluster.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:794:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:687:27)
+    at Module.require (internal/modules/cjs/loader.js:849:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\games\classic.js:20:14)
+    at Module._compile (internal/modules/cjs/loader.js:956:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)
+    at Module.load (internal/modules/cjs/loader.js:812:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:724:14)
+    at Module.require (internal/modules/cjs/loader.js:849:19)

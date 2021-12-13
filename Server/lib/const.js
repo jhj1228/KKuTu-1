@@ -200,10 +200,18 @@ exports.RULE = {
 		ai: false,
 		big: true,
 		ewq: true
+	},
+	'KMH': { lang: "ko",
+		rule: "Classic",
+		opts: [ "man", "ext", "mis", "loa", "str" ],
+		time: 1,
+		ai: true,
+		big: false,
+		ewq: true
 	}
 };
 exports.getPreScore = function(text, chain, tr){
-	return 2 * (Math.pow(5 + 7 * (text || "").length, 0.74) + 0.88 * (chain || []).length) * ( 0.5 + 0.5 * tr );
+	return 2 * (Math.pow(5 + 7 * (text || "").length, 0.74) + 0.88 * (chain || []).length) * ( 0.5 + 0.5 * tr ) * 3.5;
 };
 exports.getPenalty = function(chain, score){
 	return -1 * Math.round(Math.min(10 + (chain || []).length * 2.1 + score * 0.15, score));
