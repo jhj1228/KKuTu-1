@@ -483,6 +483,8 @@ function joinNewUser($c) {
 		id: $c.id,
 		guest: $c.guest,
 		box: $c.box,
+		nickname: $c.nickname,
+		exordial: $c.exordial,
 		playTime: $c.data.playTime,
 		okg: $c.okgCount,
 		users: KKuTu.getUserList(),
@@ -494,6 +496,21 @@ function joinNewUser($c) {
 	});
 	narrateFriends($c.id, $c.friends, "on");
 	KKuTu.publish('conn', {user: $c.getData()});
+
+	setInterval(() => {
+		$c.send('reloadData', {
+			id: $c.id,
+			box: $c.box,
+			nickname: $c.nickname,
+			exordial: $c.exordial,
+			playTime: $c.data.playTime,
+			okg: $c.okgCount,
+			users: KKuTu.getUserList(),
+			rooms: KKuTu.getRoomList(),
+			friends: $c.friends,
+			admin: $c.admin
+		});
+	}, 18000);
 
 	JLog.info("New user #" + $c.id);
 }
@@ -535,8 +552,24 @@ function processClientRequest($c, msg) {
 
 			$c.publish('yell', {value: msg.value});
 			break;
+		case 'reloadData':
+			$c.send('reloadData', {
+				id: $c.id,
+				box: $c.box,
+				nickname: $c.nickname,
+				exordial: $c.exordial,
+				playTime: $c.data.playTime,
+				okg: $c.okgCount,
+				users: KKuTu.getUserList(),
+				rooms: KKuTu.getRoomList(),
+				friends: $c.friends,
+				admin: $c.admin
+			});
 		case 'refresh':
 			$c.refresh();
+			break;
+		case 'bulkRefresh':
+			for(let i in DIC) DIC[i].refresh();
 			break;
 		case 'talk':
 			if (!msg.value) return;

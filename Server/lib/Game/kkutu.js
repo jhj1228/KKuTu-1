@@ -244,6 +244,7 @@ exports.Client = function(socket, profile, sid){
 			image: GUEST_IMAGE
 		};
 	}
+	my.nickname = null;
 	my.socket = socket;
 	my.place = 0;
 	my.team = 0;
@@ -292,7 +293,7 @@ exports.Client = function(socket, profile, sid){
 		
 		try{ data = JSON.parse(msg); }catch(e){ data = { error: 400 }; }
 
-		JLog.log(`Chan @${channel} Msg #${my.id}: ${data.type == 'drawingCanvas' ? JSON.stringify({type: data.type, diffed: data.diffed}) : msg}`);
+		if(JSON.parse(msg).type != 'reloadData') JLog.log(`Chan @${channel} Msg #${my.id}: ${data.type == 'drawingCanvas' ? JSON.stringify({type: data.type, diffed: data.diffed}) : msg}`);
 		if(Cluster.isWorker) process.send({ type: "tail-report", id: my.id, chan: channel, place: my.place, msg: data.error ? msg : data });
 		
 		exports.onClientMessage(my, data);
@@ -347,6 +348,7 @@ exports.Client = function(socket, profile, sid){
 			o.data = my.data;
 			o.money = my.money;
 			o.equip = my.equip;
+			o.nickname = my.nickname;
 			o.exordial = my.exordial;
 		}
 		return o;
@@ -442,7 +444,7 @@ exports.Client = function(socket, profile, sid){
 			const blockedUntil = (first || !$user.blockedUntil) ? null : $user.blockedUntil;
 			/* Enhanced User Block System [E] */
 
-			if(first) $user = { money: 0 };
+			if(first) $user = { nickname: my.profile.title || my.profile.name, money: 0 };
 			if(black == "null") black = false;
 			if(black == "chat"){
 				black = false;
@@ -463,14 +465,21 @@ exports.Client = function(socket, profile, sid){
 					}
 				}
 			}*/
+			my.nickname = $user.nickname;
 			my.exordial = $user.exordial || "";
+			if (my.nickname) my.profile.title = my.nickname;
 			my.equip = $user.equip || {};
 			my.box = $user.box || {};
 			my.data = new exports.Data($user.kkutu);
 			my.money = Number($user.money);
 			my.friends = $user.friends || {};
-			if(first) my.flush();
-			else{
+			if(first){
+				my.flush();
+				DB.users.update([ '_id', my.id ]).set([ 'nickname', my.nickname || "별명 미지정" ]).on(function($body){
+					if(!my.nickname) JLog.warn(`OAuth로부터 별명을 받아오지 못한 유저가 있습니다. #${my.id}`);
+					DB.session.update([ '_id', sid ]).set([ 'nickname', my.nickname || "별명 미지정" ]).on();
+				});
+			}else{
 				my.checkExpire();
 				my.okgCount = Math.floor((my.data.playTime || 0) / PER_OKG);
 			}

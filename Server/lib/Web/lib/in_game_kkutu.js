@@ -48,6 +48,7 @@ var $data = {};
 var $lib = { Classic: {}, Jaqwi: {}, Crossword: {}, Typing: {}, Hunmin: {}, Daneo: {}, Sock: {}, Drawing: {} };
 var $rec;
 var mobile;
+var isWelcome = false;
 
 var audioContext = window.hasOwnProperty("AudioContext") ? (new AudioContext()) : false;
 var _WebSocket = window['WebSocket'];
@@ -78,6 +79,9 @@ $(document).ready(function(){
 	
 	$data.PUBLIC = $("#PUBLIC").html() == "true";
 	$data.URL = $("#URL").html();
+	$data.NICKNAME_LIMIT = JSON.parse($("#NICKNAME_LIMIT").text());
+	$data.NICKNAME_LIMIT.REGEX.unshift(null);
+	$data.NICKNAME_LIMIT.REGEX = new (Function.prototype.bind.apply(RegExp, $data.NICKNAME_LIMIT.REGEX));
 	$data.version = $("#version").html();
 	$data.server = location.href.match(/\?.*server=(\d+)/)[1];
 	$data.shop = {};
@@ -849,13 +853,29 @@ $(document).ready(function(){
 		});
 	});
 	$stage.dialog.dressOK.on('click', function(e){
+		var data = {};
+
 		$(e.currentTarget).attr('disabled', true);
-		$.post("/exordial", { data: $("#dress-exordial").val() }, function(res){
-			$stage.dialog.dressOK.attr('disabled', false);
-			if(res.error) return fail(res.error);
-			
-			$stage.dialog.dress.hide();
-		});
+
+		if($("#dress-nickname").val() !== $data.nickname) data.nickname = $("#dress-nickname").val();
+		if($("#dress-exordial").val() !== $data.exordial) data.exordial = $("#dress-exordial").val();
+
+		if(data.nickname || !Object.is(data.exordial, undefined)){
+			if(data.nickname && $data.NICKNAME_LIMIT.REGEX.test(data.nickname)) data.nickname = confirm("닉네임 정책에 어긋나는 문자(열)이 포함되어 있습니다.\n닉네임 정책에 어긋나는 부분을 제거하고 변경할까요?") ? data.nickname.replace($data.NICKNAME_LIMIT.REGEX, "") : undefined;
+			if(data.nickname ? confirm($data.NICKNAME_LIMIT.TERM > 0 ? L.sureChangeNickLimit1 + $data.NICKNAME_LIMIT.TERM + L.sureChangeNickLimit2 : L.sureChangeNickNoLimit) : !Object.is(data.exordial, undefined)) $.post("/profile", data, function(res){
+				if(res.error) return fail(res.error);
+				if(data.nickname){
+					$data.users[$data.id].nickname = $data.nickname = data.nickname;
+					$("#account-info").text(data.nickname);
+				}
+				if(!Object.is(data.exordial, undefined)) $data.users[$data.id].exordial = $data.exordial = data.exordial;
+
+				send("bulkRefresh");
+				alert(data.nickname ? (!Object.is(data.exordial, undefined) ? L.nickChanged + $data.nickname + L.changed + " " + L.exorChanged + $data.exordial + L.changed : L.nickChanged + $data.nickname + L.changed) : L.exorChanged + $data.exordial + L.changed);
+			});
+		}
+		$stage.dialog.dressOK.attr("disabled", false);
+		$stage.dialog.dress.hide();
 	});
 	$("#DressDiag .dress-type").on('click', function(e){
 		var $target = $(e.currentTarget);
@@ -1051,6 +1071,7 @@ $(document).ready(function(){
 		};
 		ws.onerror = function(e){
 			console.warn(L['error'], e);
+			isWelcome = false;
 		};
 	}
 });
@@ -2383,7 +2404,10 @@ function onMessage(data){
 			$data._playTime = data.playTime;
 			$data._okg = data.okg;
 			$data._gaming = false;
+			$data.nickname = data.nickname;
+			$data.exordial = data.exordial;
 			$data.box = data.box;
+			$data.nickLimit = data.nickLimit;
 			if(data.test) alert(L['welcomeTestServer']);
 			if(location.hash[1]) tryJoin(location.hash.slice(1));
 			updateUI(undefined, true);
@@ -2470,6 +2494,20 @@ function onMessage(data){
 		case 'user':
 			$data.setUser(data.id, data);
 			if($data.room) updateUI($data.room.id == data.place);
+			break;
+		case 'reloadData':
+			$data.id = data.id;
+			$data.admin = data.admin;
+			if(!$data._gaming) $data.users = data.users;
+			$data.rooms = data.rooms;
+			$data.friends = data.friends;
+			$data._playTime = data.playTime;
+			$data._okg = data.okg;
+			$data.nickname = data.nickname;
+			$data.exordial = data.exordial;
+			$data.box = data.box;
+			updateUI(undefined, true);
+			updateCommunity();
 			break;
 		case 'friends':
 			$data._friends = {};
@@ -2695,6 +2733,8 @@ function welcome(){
 	}, 2000);
 	
 	if($data.admin) console.log("관리자 모드");
+
+	isWelcome = true;
 }
 function getKickText(profile, vote){
 	var vv = L['agree'] + " " + vote.Y + ", " + L['disagree'] + " " + vote.N + L['kickCon'];
@@ -3405,6 +3445,7 @@ function drawMyDress(avGroup){
 	renderMoremi($view, my.equip);
 	$(".dress-type.selected").removeClass("selected");
 	$("#dress-type-all").addClass("selected");
+	$("#dress-nickname").val(my.nickname);
 	$("#dress-exordial").val(my.exordial);
 	drawMyGoods(avGroup || true);
 }
