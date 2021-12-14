@@ -208,10 +208,26 @@ exports.RULE = {
 		ai: true,
 		big: false,
 		ewq: true
+	},
+	'KTT': { lang: "ko",
+		rule: "Typing",
+		opts: [ "ijp" ],
+		time: 1,
+		ai: false,
+		big: false,
+		ewq: false
+	},
+	'ETT': { lang: "en",
+		rule: "Typing",
+		opts: [ ],
+		time: 1,
+		ai: false,
+		big: false,
+		ewq: false
 	}
 };
 exports.getPreScore = function(text, chain, tr){
-	return 2 * (Math.pow(5 + 7 * (text || "").length, 0.74) + 0.88 * (chain || []).length) * ( 0.5 + 0.5 * tr ) * 3.5;
+	return 2 * (Math.pow(5 + 7 * (text || "").length, 0.74) + 0.88 * (chain || []).length) * ( 0.5 + 0.5 * tr ) * 6;
 };
 exports.getPenalty = function(chain, score){
 	return -1 * Math.round(Math.min(10 + (chain || []).length * 2.1 + score * 0.15, score));
@@ -230,26 +246,25 @@ exports.KO_INJEONG = [
 	"NSK", "KOT", "DOT", "DRR", "DGM", "RAG", "LVL",
 	"LOL", "MRN", "MMM", "MAP", "MKK", "MNG",
 	"MOB", "HYK", "CYP", "HRH", "STA", "OIJ",
-	"KGR", "ESB", "ELW", "OIM", "OVW", "NEX", /*"WOW",*/
+	"ESB", "ELW", "OIM", "OVW", "NEX", "WOW",
 	"YRY", "KPO", "JLN", "JAN", "ZEL", "POK", "HAI",
-	"HSS", "KMV", "HDC", "HOS"
+	"HSS", "KMV", "HDC", "HOS", "THP", "BGP", "JPT", "CKR"
 ];
 exports.EN_INJEONG = [
 	"LOL"
 ];
 exports.KO_THEME = [
-	"30", "40", "60", "80", "90",
-	"140", "150", "160", "170", "190",
-	"220", "230", "240", "270", "310",
-	"320", "350", "360", "420", "430",
-	"450", "490", "530", "1001"
+	//-"30", "40", "60", "80", "90",
+	//-"140", "150", "160", "170", "190",
+	//-"220", "230", "240", "270", "310",
+	//-"320", "350", "360", "420", "430",
+	//-"450", "490", "530", "1001"
 ];
 exports.EN_THEME = [
 	"e05", "e08", "e12", "e13", "e15",
 	"e18", "e20", "e43"
 ];
 exports.IJP_EXCEPT = [
-	"OIJ"
 ];
 exports.KO_IJP = exports.KO_INJEONG.concat(exports.KO_THEME).filter(function(item){ return !exports.IJP_EXCEPT.includes(item); });
 exports.EN_IJP = exports.EN_INJEONG.concat(exports.EN_THEME).filter(function(item){ return !exports.IJP_EXCEPT.includes(item); });

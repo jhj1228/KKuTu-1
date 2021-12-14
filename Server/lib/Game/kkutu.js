@@ -239,7 +239,7 @@ exports.Client = function(socket, profile, sid){
 		my.guest = true;
 		my.isAjae = false;
 		my.profile = {
-			id: sid,
+			id: "guest__" + sid,
 			title: getGuestName(sid),
 			image: GUEST_IMAGE
 		};
@@ -1458,49 +1458,56 @@ function getRewards(mode, score, bonus, rank, all, ss){
 			rw.score += score * 0;
 			break;
 		case "KKT":
-			rw.score += score * 1.42;
+			rw.score += score * 1.95;
 			break;
 		case "KSH":
-			rw.score += score * 0.55;
+			rw.score += score * 0.85;
 			break;
 		case "CSQ":
 			rw.score += score * 0;
 			break;
 		case 'KCW':
-			rw.score += score * 1.0;
+			rw.score += score * 1.24;
 			break;
 		case 'KTY':
-			rw.score += score * 0.3;
+			rw.score += score * 0.75;
 			break;
 		case 'ETY':
 			rw.score += score * 0;
 			break;
 		case 'KAP':
-			rw.score += score * 0.8;
+			rw.score += score * 1.12;
 			break;
 		case 'HUN':
-			rw.score += score * 0.5;
+			rw.score += score * 1.03;
 			break;
 		case 'KDA':
-			rw.score += score * 0.57;
+			rw.score += score * 1.2;
 			break;
 		case 'EDA':
 			rw.score += score * 0;
 			break;
 		case 'KSS':
-			rw.score += score * 0.5;
+			rw.score += score * 0.85;
 			break;
 		case 'ESS':
 			rw.score += score * 0;
 			break;
 		case 'KDG':
-			rw.score += score * 0.57;
+			rw.score += score * 1.05;
 			break;
 		case 'EDG':
 			rw.score += score * 0;
 			break;
 		case 'KMH':
-			rw.score += score * 0.95;
+			rw.score += score * 1.3;
+			break;
+		case 'KTT':
+			rw.score += score * 0.75;
+			break;
+		case 'ETT':
+			rw.score += score * 0;
+			break;
 		default:
 			break;
 	}
