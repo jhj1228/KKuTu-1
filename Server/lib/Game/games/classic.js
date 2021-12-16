@@ -221,7 +221,7 @@
 	 if(!my.game.char) return;
 	 
 	 if(!isChainable(text, my.mode, my.game.char, my.game.subChar)) return client.chat(text);
-	 if(my.game.chain.indexOf(text) != -1) return client.publish('turnError', { code: 409, value: text }, true);
+	 if(my.game.chain.indexOf(text) != -1 && !my.opts.return) return client.publish('turnError', { code: 409, value: text }, true);
 	 
 	 l = my.rule.lang;
 	 my.game.loading = true;

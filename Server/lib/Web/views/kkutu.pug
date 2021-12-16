@@ -98,9 +98,9 @@ block Middle
 	+Dialog('SettingDiag', 300, 285, L('settingsText'))
 		div.dialog-bar
 			h4= L('bgm')
-			input#bgm-volume(type='range' min='0' max='1' value='0.5' step='0.01' style='width:50%;')
+			input#bgm-volume(type='range' min='0' max='1' value='0.25' step='0.01' style='width:50%;')
 			h4= L('effect')
-			input#effect-volume(type='range' min='0' max='1' value='0.5' step='0.01' style='width:50%;')
+			input#effect-volume(type='range' min='0' max='1' value='0.25' step='0.01' style='width:50%;')
 		div.dialog-bar
 			h4= L('denyReq')
 			+SettingOption('deny-invite', L('denyInvite'))
@@ -144,8 +144,8 @@ block Middle
 			select#quick-mode
 				- for(var i in locals.MODE)
 					option(value=Number(i))= L('mode' + locals.MODE[i])
-		div.dialog-bar(style='height: 59px;')
-			h4(style='height: 45px;')= L('misc')
+		div.dialog-bar(style='height: 110px;')
+			h4(style='height: 300px;')= L('misc')
 			- for(var i in locals.OPTIONS)
 				+GameOption(i, 'quick')
 		div.dialog-bar
@@ -154,7 +154,7 @@ block Middle
 			h4(style='width: 100%; height: 20px;')#quick-queue
 		div.dialog-bar.tail-button
 			button#quick-ok= L('OK')
-	+Dialog('RoomDiag', 300, 375)
+	+Dialog('RoomDiag', 300, 430)
 		div.dialog-bar
 			h4= L('roomTitle')
 			input#room-title(placeholder=(nick || L('guest'))+L('roomDefault'), maxlength=20)
@@ -203,8 +203,8 @@ block Middle
 				option(value=90)
 				option(value=120)
 				option(value=150)
-		div.dialog-bar(style='height: 59px;')
-			h4(style='height: 45px;')= L('misc')
+		div.dialog-bar(style='height: 110px;')
+			h4(style='height: 300px;')= L('misc')
 			- for(var i in locals.OPTIONS)
 				+GameOption(i, 'room')
 			div.dialog-opt#room-injpick-panel

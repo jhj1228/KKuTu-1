@@ -117,7 +117,8 @@
 		"withDiscord": "디스코드 아이디로 로그인",
 		"withGithub": "깃허브 아이디로 로그인",
 		"withLine": "라인 아이디로 로그인",
-		"login_kkutu": "글자로 놀자! 끄투 온라인을 이용하시려면 로그인을 해 주세요."
+		"login_kkutu": "글자로 놀자! 끄투 온라인을 이용하시려면 로그인을 해 주세요.",
+		"loginLegal": "로그인이 이루어지면 레전드끄투가 공지하는 <a href='agreement.html' target='_blank'>서비스 이용 약관</a> 및 <a href='privacy.html' target='_blank'>개인정보 취급 방침</a>에 동의하게 됩니다."
 	},
 	"loginfail": {
 		"title": "로그인 실패",
@@ -125,8 +126,8 @@
 		"login": "로그인"
 	},
 	"kkutu": {
-		"title": "글자로 놀자! 끄투 온라인",
-		"version": "2.5.1",
+		"title": "글자로 놀자! 레전드끄투",
+		"version": "2.5.4",
 		
 		"meta_desc": "온라인 끝말잇기, 앞말잇기, 자음퀴즈, 십자말풀이, 타자 대결까지! 끄투에서 어휘력의 제왕이 되어 보세요.",
 		"meta_keys": "끄투,kkutu,끝말잇기,온라인,웹,쿵쿵따,영어끝말잇기,영어쿵쿵따,시리토리,끝말잇기사이트,자음퀴즈,초성퀴즈,자퀴,십자말풀이,가로세로,타자,타자연습,앞말잇기",
@@ -335,6 +336,8 @@
 		"explUnlimited": "그림퀴즈에서 나오는 단어의 길이를 무한정으로 조절합니다.",
 		"optShort": "짧음",
 		"explShort": "그림퀴즈에서 나오는 단어의 길이를 최대 4글자로 조절합니다.",
+		"optReturn": "리턴",
+		"explReturn": "이미 사용했던 단어를 다시 사용할 수 있습니다.",
 		"hidden": "(미공개)",
 		"pickInjeong": "주제 선택",
 		"explInjPick": "게임에서 사용할 주제를 선택하세요.",
@@ -398,6 +401,13 @@
 		"theme_BGP": "뱅드림: 걸즈 밴드 파티!",
 		"theme_JPT": "일본 철도역",
 		"theme_CKR": "쿠키런",
+		"theme_PCR": "프린세스 커넥트! Re:Dive",
+		"theme_BUS": "버스 터미널",
+		"theme_NRT": "나루토",
+		"theme_DBD": "데드 바이 데이라이트",
+		"theme_APP": "애플리케이션",
+		"theme_UDT": "언더테일",
+		"theme_KMU": "한국 대중음악",
 		
 		"class_1": "명",
 		"class_2": "대명",

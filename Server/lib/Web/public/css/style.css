@@ -128,6 +128,7 @@ span{
 }
 	.autocomp-item{ margin: 1px 0px; }
 	.autocomp-item:hover, .autocomp-select{ color: #FFFFFF; background-color: rgba(50, 50, 50, 0.8); }
+
 #account{ float: right; margin: 1px; font-size: 11px; color: #444444; }
 #account-setting{
 	float: left;

@@ -357,4 +357,26 @@ ReferenceError: L is not defined
     at Connection.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\client.js:180:19)
     at Connection.emit (events.js:210:5)
     at Socket.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\connection.js:133:12)
-    at Socket.emit (events.js:210:5)
+    at Socket.emit (events.js:210:5):8496 [2021-12-16 13:20:38] ERROR: TypeError: my.getLevel is not a function
+TypeError: my.getLevel is not a function
+    at exports.Client.my.enter (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js:618:39)
+    at C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\slave.js:167:8
+    at exports.Tail.go (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\lizard.js:43:16)
+    at C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js:494:11
+    at callback (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:316:13)
+    at Result.preCB (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:298:6)
+    at Result.Query.handleReadyForQuery (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\query.js:144:10)
+    at Connection.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\client.js:180:19)
+    at Connection.emit (events.js:210:5)
+    at Socket.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\connection.js:133:12):8496 [2021-12-16 13:21:47] ERROR: TypeError: my.getLevel is not a function
+TypeError: my.getLevel is not a function
+    at exports.Client.my.enter (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js:618:39)
+    at C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\slave.js:167:8
+    at exports.Tail.go (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\lizard.js:43:16)
+    at C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\Game\kkutu.js:494:11
+    at callback (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:316:13)
+    at Result.preCB (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\sub\collection.js:298:6)
+    at Result.Query.handleReadyForQuery (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\query.js:144:10)
+    at Connection.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\client.js:180:19)
+    at Connection.emit (events.js:210:5)
+    at Socket.<anonymous> (C:\Users\User\Desktop\KKuTu-master\KKuTu-1\Server\lib\node_modules\pg\lib\connection.js:133:12)

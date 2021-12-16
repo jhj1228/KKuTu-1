@@ -33,16 +33,17 @@ exports.TESTER = GLOBAL.ADMIN.concat([
 exports.IS_SECURED = GLOBAL.IS_SECURED;
 exports.SSL_OPTIONS = GLOBAL.SSL_OPTIONS;
 exports.OPTIONS = {
-	'man': { name: "Manner" },
-	'ext': { name: "Injeong" },
-	'mis': { name: "Mission" },
-	'loa': { name: "Loanword" },
-	'prv': { name: "Proverb" },
-	'str': { name: "Strict" },
-	'k32': { name: "Sami" },
-	'no2': { name: "No2" },
-	'ulm': { name: "Unlimited" },
-	'sht': { name: "Short" }
+	'man': { name: "Manner" }, //매너
+	'ext': { name: "Injeong" }, //어인정
+	'mis': { name: "Mission" }, //미션
+	'loa': { name: "Loanword" }, //우리말
+	'prv': { name: "Proverb" }, //속담
+	'str': { name: "Strict" }, //깐깐
+	'k32': { name: "Sami" }, //3232
+	'no2': { name: "No2" }, //2글자금지
+	'ulm': { name: "Unlimited" }, //무제한
+	'sht': { name: "Short" }, //짧음
+	'rtn': { name: "Return"}, //리턴
 };
 exports.MOREMI_PART = [ 'back', 'eye', 'mouth', 'shoes', 'clothes', 'head', 'lhand', 'rhand', 'front' ];
 exports.CATEGORIES = [ "all", "spec", "skin", "badge", "head", "eye", "mouth", "clothes", "hs", "back" ];
@@ -88,39 +89,39 @@ exports.RULE = {
 		big: false,
 		ewq: true
 	},
-	'KKT': { lang: "ko",
+	'KKT': { lang: "ko", //쿵쿵따
 		rule: "Classic",
-		opts: [ "man", "ext", "mis", "loa", "str", "k32" ],
+		opts: [ "man", "ext", "mis", "loa", "str", "k32", "rtn" ],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'KSH': { lang: "ko",
+	'KSH': { lang: "ko", //끝말잇기
 		rule: "Classic",
-		opts: [ "man", "ext", "mis", "loa", "str" ],
+		opts: [ "man", "ext", "mis", "loa", "str", "rtn" ],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'CSQ': { lang: "ko",
+	'CSQ': { lang: "ko", //자음퀴즈
 		rule: "Jaqwi",
-		opts: [ "ijp" ],
+		opts: [ "ijp", "cho" ],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: false
 	},
-	'KCW': { lang: "ko",
+	'KCW': { lang: "ko", //십자말풀이
 		rule: "Crossword",
-		opts: [],
+		opts: [ ],
 		time: 2,
 		ai: false,
 		big: true,
 		ewq: false
 	},
-	'KTY': { lang: "ko",
+	'KTY': { lang: "ko", //타자대결
 		rule: "Typing",
 		opts: [ "prv" ],
 		time: 1,
@@ -136,26 +137,26 @@ exports.RULE = {
 		big: false,
 		ewq: false
 	},
-	'KAP': { lang: "ko",
+	'KAP': { lang: "ko", //앞말잇기
 		rule: "Classic",
-		opts: [ "man", "ext", "mis", "loa", "str" ],
+		opts: [ "man", "ext", "mis", "loa", "str", "rtn" ],
 		time: 1,
 		ai: true,
 		big: false,
 		_back: true,
 		ewq: true
 	},
-	'HUN': { lang: "ko",
+	'HUN': { lang: "ko", //훈민정음
 		rule: "Hunmin",
-		opts: [ "ext", "mis", "loa", "str" ],
+		opts: [ "ext", "mis", "loa", "str", "rtn" ],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'KDA': { lang: "ko",
+	'KDA': { lang: "ko", //단어대결
 		rule: "Daneo",
-		opts: [ "ijp", "mis" ],
+		opts: [ "ijp", "mis", "rtn" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -169,7 +170,7 @@ exports.RULE = {
 		big: false,
 		ewq: true
 	},
-	'KSS': { lang: "ko",
+	'KSS': { lang: "ko", //솎솎
 		rule: "Sock",
 		opts: [ "no2" ],
 		time: 1,
@@ -185,7 +186,7 @@ exports.RULE = {
 		big: true,
 		ewq: false
 	},
-	'KDG': { lang: "ko",
+	'KDG': { lang: "ko", //그림퀴즈
 		rule: "Drawing",
 		opts: [ "ijp", "sht", "ulm" ],
 		time: 1,
@@ -195,21 +196,21 @@ exports.RULE = {
 	},
 	'EDG': { lang: "en",
 		rule: "Drawing",
-		opts: [ "ijp", "sht", "ulm" ],
+		opts: [ "ijp", "sht" ],
 		time: 1,
 		ai: false,
 		big: true,
 		ewq: true
 	},
-	'KMH': { lang: "ko",
+	'KMH': { lang: "ko", //가운뎃말잇기
 		rule: "Classic",
-		opts: [ "man", "ext", "mis", "loa", "str" ],
+		opts: [ "man", "ext", "mis", "loa", "str", "rtn" ],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'KTT': { lang: "ko",
+	'KTT': { lang: "ko", //주제타자대결
 		rule: "Typing",
 		opts: [ "ijp" ],
 		time: 1,
@@ -248,7 +249,8 @@ exports.KO_INJEONG = [
 	"MOB", "HYK", "CYP", "HRH", "STA", "OIJ",
 	"ESB", "ELW", "OIM", "OVW", "NEX", "WOW",
 	"YRY", "KPO", "JLN", "JAN", "ZEL", "POK", "HAI",
-	"HSS", "KMV", "HDC", "HOS", "THP", "BGP", "JPT", "CKR"
+	"HSS", "KMV", "HDC", "HOS", "THP", "BGP", "JPT", "CKR", "PCR",
+	"BUS", "NRT", "DBD", "APP", "UDT", "KMU"
 ];
 exports.EN_INJEONG = [
 	"LOL"
